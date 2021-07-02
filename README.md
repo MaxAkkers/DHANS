@@ -1,2 +1,8 @@
 # DHANS
 Diagnosing syntactical heuristics in Dutch natural language inference
+
+Natural Language Inference (NLI) is the task of determining whether a “hypothesis” is true (entailment), false (contradiction), or undetermined (neutral) given a “premise”. Machine learning models are able to score well on given datasets. This will be significantly done by relying on syntactical heuristics found in the majority of the sentences. In the more complex sentences these heuristics will not always hold up. The question if neural networks rely too much on these heuristics will be discussed in this article.The four syntactical heuristics negation, lexical overlap, subsequence and the constituent heuristic will be looked at. I created a dataset called DHANS (Dutch Heuristic Analysis for NLI Systems), consisting of sentences from the Dutch dataset SICK$\_$NL, where these syntactical heuristics fail. After testing DHANS on the models BERTje, RobBERT and mBERT I found that the models scored significantly lower on the DHANS dataset in comparison when tested on the SICK$\_$NL dataset. This concludes that the models rely too heavily on the statistical heuristics stated above. When examining these results it is clear a lot can be improved in the field of Dutch NLI systems. 
+
+The jupyternotebook file ModelTest contains the evaluation function, the finetuned models can be found on Google Drive: https://drive.google.com/drive/folders/1EsT2tMWGqQNAPpdnNTZGYXllmJff4fdY?usp=sharing
+
+main.py contains all templates used to make the sentences to create DHANS. These sentences were made by NL_corpus_creator with the templates and lexicon in main.py
